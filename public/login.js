@@ -3,7 +3,6 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-
     const responseMessage = document.getElementById('responseMessage');
 
     try {
@@ -19,7 +18,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
 
         if (response.ok) {
             localStorage.setItem('userEmail', email);
-            if (email === 'admin@gtrentz.com' && 'abc123') {
+            if (email === 'admin@gtrentz.com' && password === 'abc123') {
                 window.location.href = 'admin.html';
             } else {
                 window.location.href = 'home.html';
@@ -32,3 +31,4 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
         responseMessage.textContent = 'Error during login, please try again.';
     }
 });
+

@@ -1,19 +1,22 @@
 const express = require('express');
+const session = require('express-session');
 const { poolPromise } = require('./config/db');
 const authRoutes = require('./routes/auth');
 const cors = require('cors');
 const path = require('path');
 
 const app = express();
-
-//CORS b/c I was having some issues testing requests in Postman
 app.use(express.json());
 app.use(cors());
+app.use(session({
+    secret: process.env.SESSION_SECRET || 'your-secret-key',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}));
 
-// Use the authentication routes
 app.use('/api/auth', authRoutes);
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 poolPromise
     .then(() => {
