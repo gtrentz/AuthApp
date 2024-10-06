@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Email</title>
+</head>
+<body>
+    <h1>Verify Your Email</h1>
+    <form id="verifyForm">
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <input type="text" id="code" placeholder="Enter the secure code" required>
+        <button type="submit">Verify</button>
+    </form>
+
+    <script>
+        document.getElementById('verifyForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const code = document.getElementById('code').value;
+
+            fetch('/api/auth/verify-code', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, code })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message === 'User verified and registered successfully') {
+                        alert('Email successfully verified! You can now log in.');
+                    } else {
+                        alert('Verification failed: ' + data.message);
+                    }
+                })
+                .catch(err => console.error(err));
+        });
+    </script>
+</body>
+</html>
