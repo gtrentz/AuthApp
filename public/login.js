@@ -18,7 +18,8 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
         const data = await response.json();
 
         if (response.ok) {
-            responseMessage.textContent = data.message;
+            localStorage.setItem('userEmail', email);
+            window.location.href = 'home.html';
         } else {
             responseMessage.textContent = data.message;
         }

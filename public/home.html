@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #d714c5;
+            color: white;
+        }
+
+        #userEmail {
+            font-weight: bold;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #c82333;
+            }
+
+        #authButtons {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h2>Welcome! :)</h2>
+        <div id="userInfo"></div>
+    </div>
+
+    <h1>Home Page</h1>
+    <p>
+        If you've made it here, hopefully everything is in working order. Next step is to update this god awful styling... I will admit
+        it's not my forte
+    </p>
+
+    <script>
+        const userEmail = localStorage.getItem('userEmail');
+        const userInfoDiv = document.getElementById('userInfo');
+
+        if (userEmail) {
+            userInfoDiv.innerHTML = `
+                    <span id="userEmail">${userEmail}</span>
+                    <button id="logoutButton">Logout</button>
+                `;
+
+            document.getElementById('logoutButton').addEventListener('click', () => {
+                localStorage.removeItem('userEmail');
+                window.location.href = 'login.html';
+            });
+        } else {
+            userInfoDiv.innerHTML = `
+                    <div id="authButtons">
+                        <a href="signup.html"><button>Sign Up</button></a>
+                        <a href="login.html"><button>Login</button></a>
+                    </div>
+                `;
+        }
+    </script>
+</body>
+</html>
