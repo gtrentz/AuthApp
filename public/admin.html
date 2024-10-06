@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #logoutButton {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            #logoutButton:hover {
+                background-color: #c82333;
+            }
+    </style>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <p>View user data/generate reports</p>
+    <button id="logoutButton">Logout</button>
+
+    <script>
+        document.getElementById('logoutButton').addEventListener('click', () => {
+            localStorage.removeItem('userEmail');
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

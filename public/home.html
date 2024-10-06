@@ -6,27 +6,43 @@
     <title>Home Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
         }
 
         #header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-            background-color: #d714c5;
+            padding: 15px 20px;
+            background-color: #6f42c1;
             color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
+            #header h2 {
+                margin: 0;
+                font-size: 24px;
+            }
 
         #userEmail {
             font-weight: bold;
+            font-size: 18px;
         }
 
         h1 {
-            margin-top: 20px;
+            margin-top: 30px;
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-top: 10px;
         }
 
         button {
@@ -36,29 +52,51 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+            margin: 5px 0;
         }
 
             button:hover {
                 background-color: #c82333;
+                transform: translateY(-2px);
             }
 
         #authButtons {
             display: flex;
             gap: 10px;
         }
+
+        #logoutButton {
+            background-color: #28a745;
+        }
+
+            #logoutButton:hover {
+                background-color: #f61010;
+            }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
     <div id="header">
-        <h2>Welcome! :)</h2>
+        <h2>Home Page</h2>
         <div id="userInfo"></div>
     </div>
 
-    <h1>Home Page</h1>
-    <p>
-        If you've made it here, hopefully everything is in working order. Next step is to update this god awful styling... I will admit
-        it's not my forte
-    </p>
+    <div class="container">
+        <h1>Welcome! :)</h1>
+        <p>
+            User successfully authenticated!
+        </p>
+    </div>
 
     <script>
         const userEmail = localStorage.getItem('userEmail');

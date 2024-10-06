@@ -19,7 +19,11 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
 
         if (response.ok) {
             localStorage.setItem('userEmail', email);
-            window.location.href = 'home.html';
+            if (email === 'admin@gtrentz.com' && 'abc123') {
+                window.location.href = 'admin.html';
+            } else {
+                window.location.href = 'home.html';
+            }
         } else {
             responseMessage.textContent = data.message;
         }
