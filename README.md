@@ -48,12 +48,12 @@ Welcome to **my authentication app**, a simple user authentication system built 
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/auth-app.git
-   cd auth-app
+   git clone https://github.com/gtrentz/AuthApp.git
+   cd AuthApp
    ```
 
 2. **Install Dependencies:**
-   Make sure you have [Node.js](https://nodejs.org) and [npm](https://www.npmjs.com/) installed. Then run:
+   This project requires [Node.js](https://nodejs.org) and [npm](https://www.npmjs.com/). Then run:
    ```bash
    npm install
    ```
