@@ -1,7 +1,7 @@
 
 # Authentication App
 
-Welcome to **my authentication app**, a simple user authentication system built with Node.js, Express, and MSSQL. This application provides user registration, login functionality, session management, and admin access, demonstrating best practices for user authentication.
+Welcome to my authentication app, a simple user authentication system built with Node.js, Express, and MSSQL. This application provides user registration, login functionality, session management, and admin access, demonstrating best practices for user authentication.
 
 ## Table of Contents
 
@@ -17,7 +17,10 @@ Welcome to **my authentication app**, a simple user authentication system built 
 ## Features
 
 - **User Registration:** Securely register users using bcrypt password hashing.
+![**Signup**](https://gtrentz.neocities.org/signup.png)
 - **User Login:** Authenticates users and tracks their last login timestamp.
+![**Login**](https://gtrentz.neocities.org/login.png)
+![**Home**](https://gtrentz.neocities.org/home.png)
 - **Session Management:** Uses `express-session` to manage user sessions.
 - **Admin Dashboard:** Separate admin page for admin users to manage data.
 - **Logout:** Logs users out and invalidates their session.
@@ -106,10 +109,6 @@ DB_PORT=1433
 2. **Login:**
    - Navigate to `/login.html` to log in.
    - If you log in as an admin (`admin@gtrentz.com` with password `abc123` for demonstration purposes), you’ll be redirected to `/admin.html`, which is an admin dashboard. Otherwise, you’ll be redirected to `/home.html`.
-
-![Signup](signup.png)
-![Login](login.png)
-![Home](home.png)
 
 3. **Session Management:**
    - The app uses sessions to maintain user login state. Upon login, the session is set, and users are redirected based on their role.
