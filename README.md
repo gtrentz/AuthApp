@@ -95,10 +95,10 @@ PORT=3000
 SESSION_SECRET=your-session-secret
 
 # MSSQL Database Connection
-DB_USER=your_db_user
-DB_PASSWORD=your_db_password
-DB_SERVER=your_db_server
-DB_DATABASE=your_db_name
+DB_USER=username
+DB_PASSWORD=password
+DB_SERVER=server_name
+DB_DATABASE=db_name
 DB_PORT=1433
 
 ## Usage
