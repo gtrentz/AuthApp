@@ -103,7 +103,8 @@ DB_PORT=1433
 1. **Registration:**
    - Navigate to `/signup.html` to register a new user with email and password
 
-![Signup screen](https://github.com/gtrentz/AuthApp/blob/master/signup.png)
+![Signup screen](https://raw.githubusercontent.com/gtrentz/AuthApp/master/signup.png)
+
 
 2. **Login:**
    - Navigate to `/login.html` to log in.
