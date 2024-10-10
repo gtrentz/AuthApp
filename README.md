@@ -1,7 +1,7 @@
 
-# gtrentz Authentication App
+# Authentication App
 
-Welcome to the **gtrentz Authentication App**, a simple yet effective user authentication system built with Node.js, Express, and MSSQL. This application provides user registration, login functionality, session management, and admin access, demonstrating best practices for user authentication.
+Welcome to **my authentication app**, a simple user authentication system built with Node.js, Express, and MSSQL. This application provides user registration, login functionality, session management, and admin access, demonstrating best practices for user authentication.
 
 ## Table of Contents
 
@@ -10,9 +10,7 @@ Welcome to the **gtrentz Authentication App**, a simple yet effective user authe
 3. [Setup and Installation](#setup-and-installation)
 4. [Environment Variables](#environment-variables)
 5. [Usage](#usage)
-6. [Folder Structure](#folder-structure)
-7. [Routes](#routes)
-8. [License](#license)
+6. [Routes](#routes)
 
 ---
 
@@ -28,7 +26,7 @@ Welcome to the **gtrentz Authentication App**, a simple yet effective user authe
 
 ---
 
-## Technologies Used
+## Stack:
 
 - **Backend:**
   - Node.js
@@ -39,7 +37,7 @@ Welcome to the **gtrentz Authentication App**, a simple yet effective user authe
   
 - **Frontend:**
   - HTML/CSS
-  - Vanilla JavaScript
+  - JavaScript
 
 - **Database:**
   - MSSQL with the `mssql` Node.js package for interacting with the database.
@@ -73,7 +71,7 @@ Welcome to the **gtrentz Authentication App**, a simple yet effective user authe
      ```
 
 4. **Configure Environment Variables:**
-   You can store sensitive information like your session secret and database connection string in environment variables. See [Environment Variables](#environment-variables) for details.
+   See below - I stored environment variables like login credentials on my local machine.
 
 5. **Start the Application:**
    ```bash
@@ -84,7 +82,7 @@ Welcome to the **gtrentz Authentication App**, a simple yet effective user authe
 
 ## Environment Variables
 
-Create a `.env` file at the root of the project and add the following variables:
+Create a file called `.env` and add your credentials:
 
 ```bash
 # Server Port
@@ -99,55 +97,18 @@ DB_PASSWORD=your_db_password
 DB_SERVER=your_db_server
 DB_DATABASE=your_db_name
 DB_PORT=1433
-```
-
-Make sure to replace the placeholders with your actual MSSQL database credentials and secret values.
-
----
 
 ## Usage
 
 1. **Registration:**
-   - Navigate to `/signup.html` to register a new user.
-   - Enter your email and password, then submit the form.
+   - Navigate to `/signup.html` to register a new user with email and password
 
 2. **Login:**
    - Navigate to `/login.html` to log in.
-   - If you log in as an admin (`admin@gtrentz.com` with the correct password), you’ll be redirected to `/admin.html`. Otherwise, you’ll be redirected to `/home.html`.
+   - If you log in as an admin (`admin@gtrentz.com` with password `abc123` for demonstration purposes), you’ll be redirected to `/admin.html`, which is an admin dashboard. Otherwise, you’ll be redirected to `/home.html`.
 
-3. **Admin Dashboard:**
-   - The admin dashboard (`admin.html`) is available only to users with the admin email and password set in the environment variables.
-   - Admins can manage users and view data.
-
-4. **Session Management:**
+3. **Session Management:**
    - The app uses sessions to maintain user login state. Upon login, the session is set, and users are redirected based on their role.
-
----
-
-## Folder Structure
-
-```
-|-- config
-|   |-- db.js               # MSSQL Database configuration
-|
-|-- public
-|   |-- home.html            # Home page for logged-in users
-|   |-- login.html           # Login page
-|   |-- signup.html          # Signup page
-|   |-- admin.html           # Admin dashboard
-|   |-- styles               # Custom CSS (optional)
-|
-|-- routes
-|   |-- auth.js              # Authentication routes (register, login, logout)
-|
-|-- app.js                   # Main server file
-|-- package.json             # Project dependencies
-|-- .env                     # Environment variables (ignored in git)
-```
-
----
-
-## Routes
 
 ### Authentication Routes (`/api/auth`)
 
@@ -155,17 +116,9 @@ Make sure to replace the placeholders with your actual MSSQL database credential
   Registers a new user. Requires `email` and `password` in the request body.
 
 - **POST `/login`**  
-  Logs a user in. Requires `email` and `password`. If credentials are valid, a session is created, and the user's `last_login` is updated.
+  Logs a user in. Requires `email` and `password`. If credentials are valid, a session is created, and the user's `last_login` is updated in the Users table
 
 - **POST `/logout`**  
-  Logs the user out by destroying the session.
+  Logs the user out by ending the session.
 
----
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to contribute by opening issues or submitting pull requests. Thanks for checking out the **gtrentz Authentication App**!
