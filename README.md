@@ -103,14 +103,14 @@ DB_PORT=1433
 1. **Registration:**
    - Navigate to `/signup.html` to register a new user with email and password
 
-![Signup screen](./signup.png)
+![Signup screen](https://github.com/gtrentz/AuthApp/blob/master/signup.png)
 
 2. **Login:**
    - Navigate to `/login.html` to log in.
    - If you log in as an admin (`admin@gtrentz.com` with password `abc123` for demonstration purposes), you’ll be redirected to `/admin.html`, which is an admin dashboard. Otherwise, you’ll be redirected to `/home.html`.
 
-![Login screen](./login.png)
-![Home screen](./home.png)
+![Login screen](https://github.com/gtrentz/AuthApp/blob/master/login.png)
+![Home screen](https://github.com/gtrentz/AuthApp/blob/master/home.png)
 
 3. **Session Management:**
    - The app uses sessions to maintain user login state. Upon login, the session is set, and users are redirected based on their role.
